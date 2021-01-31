@@ -1,21 +1,21 @@
 <template>
   <div class="dark:bg-black">
-    <Header/>
+    <UIHeader/>
     <main class="px-4 sm:px-6 pt-20">
       <Nuxt/>
     </main>
-    <Footer/>
+    <UIFooter/>
   </div>
 </template>
 
 <script>
-import Header from '~/components/includes/Header'
-import Footer from '~/components/includes/Footer'
+import UIHeader from '~/components/includes/UIHeader'
+import UIFooter from '~/components/includes/UIFooter'
 
 export default {
   components: {
-    Header,
-    Footer
+    UIHeader,
+    UIFooter
   }
 };
 </script>

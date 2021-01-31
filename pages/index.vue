@@ -4,7 +4,7 @@
       <p class="text-xl text-center leading-8 md:text-left dark:text-white">Hamrouni Charfeddine</p>
       <p class="opacity-50 text-center md:text-left dark:text-white">Développeur web</p>
 
-      <h1 class="mt-3 text-4xl text-center md:text-left md:text-5xl lg:text-6xl leading:10 lg:leading-20 dark:text-white">Hey there! I’m a creative graphic and web developer based in Paris.</h1>
+      <h1 class="mt-3 text-4xl text-center md:text-left md:text-5xl lg:text-6xl leading:10 lg:leading-20 dark:text-white">Hey there! Je suis un graphiste et développeur web très créatif basé à Paris.</h1>
     </section>
 
     <section class="mb-20">
@@ -13,7 +13,7 @@
           <NuxtLink class="block h-460 mb-10" :to="{name: 'project'}">
             <img class="object-cover h-full w-full hover:opacity-75" src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececb102f913e509144f_portfolio%201%20-%20wide.svg" alt="Image Projet">
           </NuxtLink>
-          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Project 1</NuxtLink>
+          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Projet 1</NuxtLink>
           <p class="opacity-50 text-center dark:text-white">Passy Plaza</p>
         </article>
 
@@ -21,7 +21,7 @@
           <NuxtLink class="block h-460 mb-10" :to="{name: 'project'}">
             <img class="object-cover h-full w-full hover:opacity-75" src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececb102f913e509144f_portfolio%201%20-%20wide.svg" alt="Image Projet">
           </NuxtLink>
-          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Project 2</NuxtLink>
+          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Projet 2</NuxtLink>
           <p class="opacity-50 text-center dark:text-white">Mairie de Montreuil</p>
         </article>
       </div>
@@ -31,7 +31,7 @@
           <NuxtLink class="block h-460 mb-10" :to="{name: 'project'}">
             <img class="object-cover h-full w-full hover:opacity-75" src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececb102f913e509144f_portfolio%201%20-%20wide.svg" alt="Image Projet">
           </NuxtLink>
-          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Project 3</NuxtLink>
+          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Projet 3</NuxtLink>
           <p class="opacity-50 text-center dark:text-white">Passy Plaza</p>
         </article>
 
@@ -39,14 +39,14 @@
           <NuxtLink class="block h-460 mb-10" :to="{name: 'project'}">
             <img class="object-cover h-full w-full hover:opacity-75" src="https://assets.website-files.com/5c6e6f46bf98b2013cf621c5/5cdbececb102f913e509144f_portfolio%201%20-%20wide.svg" alt="Image Projet">
           </NuxtLink>
-          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Project 4</NuxtLink>
+          <NuxtLink :to="{name: 'project'}" class="inline-block text-base md:text-xl leading-8 mb-1 text-center hover:opacity-75 dark:text-white">Projet 4</NuxtLink>
           <p class="opacity-50 text-center dark:text-white">Mairie de Montreuil</p>
         </article>
       </div>
     </section>
 
     <section class="mb-32 text-center md:text-left">
-      <h2 class="text-4xl text-black mb-2 dark:text-white">My experience</h2>
+      <h2 class="text-4xl text-black mb-2 dark:text-white">Mes expériences</h2>
       <p class="opacity-50 max-w-screen-md dark:text-white">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
       </p>
@@ -55,8 +55,8 @@
     <section class="bg-grayCustom p-10 lg:p-20 dark:bg-dark">
       <div class="text-center mb-10 md:text-left">
         <h2 class="text-3xl mb-3 dark:text-white">
-          Want to get in touch?<br>
-          Drop me a line!
+          Une idée ? Un Projet ?<br>
+          N'hésitez pas à m'envoyer un message !
         </h2>
         <p class="opacity-50 dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
@@ -64,21 +64,21 @@
       <form @submit.prevent="sendForm" method="post" class="max-w-screen-md">
         <div class="flex flex-col md:flex-row justify-between">
           <div class="flex items-stretch mb-5 mr-8 flex-col w-full md:w-1/2">
-            <label class="uppercase text-xs mb-3 font-medium dark:text-white" for="name">Name</label>
-            <input class="outline-normal p-5 text-sm h-4 focus:outline-black dark:bg-grayCustom" type="text" inputmode="text" id="name" placeholder="Enter your name">
+            <label class="uppercase text-xs mb-3 font-medium dark:text-white" for="name">Nom</label>
+            <input class="outline-normal p-5 text-sm h-4 focus:outline-black dark:bg-grayCustom" type="text" inputmode="text" id="name" placeholder="Enter votre nom">
           </div>
           <div class="flex items-stretch mb-5 flex-col w-full md:w-1/2">
             <label class="uppercase text-xs mb-3 font-medium dark:text-white" for="email">Email</label>
-            <input class="outline-normal p-5 text-sm h-4 focus:outline-black dark:bg-grayCustom" type="email" inputmode="email" id="email" placeholder="Enter your email">
+            <input class="outline-normal p-5 text-sm h-4 focus:outline-black dark:bg-grayCustom" type="email" inputmode="email" id="email" placeholder="Enter votre email">
           </div>
         </div>
 
         <div class="flex items-stretch mb-5 flex-col w-full">
           <label class="uppercase text-xs mb-3 font-medium dark:text-white" for="message">Message</label>
-          <textarea class="outline-normal p-5 text-sm h-56 resize-none focus:outline-black dark:bg-grayCustom" inputmode="text" id="message" placeholder="Enter your message"></textarea>
+          <textarea class="outline-normal p-5 text-sm h-56 resize-none focus:outline-black dark:bg-grayCustom" inputmode="text" id="message" placeholder="Enter votre message"></textarea>
         </div>
 
-        <button class="uppercase py-3 px-6 text-sm text-white bg-black outline-none focus:outline-none dark:bg-white dark:text-black" type="submit">Submit</button>
+        <button class="uppercase py-3 px-6 text-sm text-white bg-black outline-none focus:outline-none dark:bg-white dark:text-black" type="submit">Envoyer</button>
       </form>
     </section>
   </div>
@@ -86,6 +86,12 @@
 
 <script>
   export default {
+    head() {
+      return {
+        title: 'Accueil',
+        titleTemplate: null
+      }
+    },
     methods: {
       sendForm(e) {
         console.log(e)
