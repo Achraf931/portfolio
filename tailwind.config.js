@@ -6,11 +6,24 @@ module.exports = {
         black: '#1a1b1f',
         grayCustom: '#222222'
       },
-      backgroundColor: {
+      textColor: {
+        grayCustom: '#222222',
         black: '#1a1b1f'
+      },
+      backgroundColor: {
+        black: '#1a1b1f',
+        grayCustom: '#f4f4f4',
+        dark: 'black'
+      },
+      outline: {
+        normal: '1px solid #e4e4e4',
+        black: '1px solid #43464d'
       },
       lineHeight: {
         '20': '5rem'
+      },
+      height: {
+        '460': '28.75rem'
       }
     },
     fontFamily: {
