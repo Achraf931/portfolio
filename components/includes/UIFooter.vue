@@ -4,10 +4,10 @@
     <div class="flex items-center flex-no-shrink flex-grow justify-end ml-auto">
       <button @click="toggle" class="btn border justify-between w-24 items-center inline-flex bg-black text-white border-black px-3 outline-none focus:outline-none rounded-full dark:bg-white dark:text-black">
         <template v-if="this.$colorMode.value === 'dark'">
-          <p class="m-auto text-white font-semibold text-sm">Dark</p>
+          <p class="m-auto font-semibold text-black text-sm">Light</p>
         </template>
         <template v-else>
-          <p class="m-auto font-semibold text-black text-sm">Light</p>
+          <p class="m-auto text-white font-semibold text-sm">Dark</p>
         </template>
       </button>
       <a href="http://linkedin.com/in/charfeddine-hamrouni-72387110b" target="_blank" rel="noreferrer noopener" class="inline-flex px-4 text-xs uppercase items-center opacity-50 hover:opacity-100 dark:text-white dark:hover:opacity-50">Linkedin</a>
