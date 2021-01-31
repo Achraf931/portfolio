@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'media',
   theme: {
     darkSelector: '.light-mode',
     extend: {
