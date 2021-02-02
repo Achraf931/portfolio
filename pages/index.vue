@@ -4,7 +4,7 @@
       <p class="text-xl text-center leading-8 md:text-left dark:text-white">Hamrouni Charfeddine</p>
       <p class="opacity-50 text-center md:text-left dark:text-white">Développeur web</p>
 
-      <h1 class="mt-3 text-4xl text-center md:text-left md:text-5xl lg:text-6xl leading:10 lg:leading-20 dark:text-white">Hey there! Je suis un graphiste et développeur web très créatif basé à Paris.</h1>
+      <h1 class="mt-3 text-2xl md:text-4xl text-center md:text-left md:text-5xl lg:text-6xl leading:10 lg:leading-20 dark:text-white">Hey there! Je suis un graphiste et développeur web très créatif basé à Paris.</h1>
     </section>
 
     <section class="mb-20">
@@ -46,15 +46,15 @@
     </section>
 
     <section class="mb-32 text-center md:text-left">
-      <h2 class="text-4xl text-black mb-2 dark:text-white">Mes expériences</h2>
+      <h2 class="text-2xl md:text-4xl text-black mb-2 dark:text-white">Mes expériences</h2>
       <p class="opacity-50 max-w-screen-md dark:text-white">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
       </p>
     </section>
 
-    <section class="bg-grayCustom p-10 lg:p-20 dark:bg-dark">
+    <section class="bg-grayCustom p-6 md:p-10 lg:p-20 dark:bg-dark">
       <div class="text-center mb-10 md:text-left">
-        <h2 class="text-3xl mb-3 dark:text-white">
+        <h2 class="text-xl md:text-3xl mb-3 dark:text-white">
           Une idée ? Un Projet ?<br>
           N'hésitez pas à m'envoyer un message !
         </h2>

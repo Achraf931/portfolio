@@ -27,6 +27,9 @@ module.exports = {
       },
       height: {
         '460': '28.75rem'
+      },
+      screens: {
+        'xs': '480px'
       }
     },
     fontFamily: {
