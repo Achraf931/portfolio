@@ -2,7 +2,7 @@
   <footer class="p-6 relative select-none bg-white flex items-center items-stretch w-full dark:bg-black">
     <p class="text-grayCustom text-xs flex items-center uppercase opacity-5 dark:text-white">Merci pour votre visite !</p>
     <div class="flex items-center flex-no-shrink flex-grow justify-end ml-auto">
-      <button @click="toggle" class="btn border justify-between w-24 items-center inline-flex bg-black text-white border-black px-3 outline-none focus:outline-none rounded-full dark:bg-white dark:text-black">
+      <button @click="toggle" class="border justify-between w-24 items-center inline-flex bg-black text-white border-black px-3 outline-none focus:outline-none rounded-full hover:opacity-75 dark:bg-white dark:text-black">
         <template v-if="this.$colorMode.value === 'dark'">
           <p class="m-auto font-semibold text-black text-sm">Light</p>
         </template>

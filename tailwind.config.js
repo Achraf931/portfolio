@@ -17,6 +17,8 @@ module.exports = {
         dark: 'black'
       },
       outline: {
+        grayCustom: '1px solid #222222',
+        lightGray: '1px solid #f4f4f4',
         normal: '1px solid #e4e4e4',
         black: '1px solid #43464d'
       },
