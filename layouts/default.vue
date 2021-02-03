@@ -1,8 +1,13 @@
 <template>
   <div class="dark:bg-black">
     <UIHeader/>
-    <main class="px-4 sm:px-6 pt-20">
+    <main class="px-4 sm:px-6 pt-20 relative">
       <Nuxt/>
+      <transition name="slide-fade" mode="out-in">
+        <div v-if="$nuxt.isOffline" role="alert" class="mr-6 mb-6 z-10 text-sm fixed px-4 py-3 leading-normal text-red-100 bg-red-700 font-medium rounded right-0 bottom-0">
+          Vous n'êtes plus connecté à internet.
+        </div>
+      </transition>
     </main>
     <UIFooter/>
   </div>
@@ -25,6 +30,18 @@ export default {
   transition: opacity .2s;
 }
 .page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
   opacity: 0;
 }
 

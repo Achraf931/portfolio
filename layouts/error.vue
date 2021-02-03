@@ -16,7 +16,7 @@ export default {
   layout: 'custom',
   head() {
     return {
-      title: '404',
+      title: '404 - Page Introuvable',
       titleTemplate: null
     }
   },
