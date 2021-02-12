@@ -5,7 +5,8 @@
     </NuxtLink>
     <div class="inline-flex items-stretch flex-no-shrink flex-grow justify-end ml-auto">
       <NuxtLink :to="{name: 'index'}" class="py-2 px-4 text-xs flex items-center uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white">Accueil</NuxtLink>
-      <NuxtLink :to="{name: 'about'}" class="py-2 px-4 text-xs flex items-center uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white">à propos</NuxtLink>
+      <NuxtLink :to="{name: 'projects'}" class="py-2 px-4 text-xs flex items-center uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white">Projets</NuxtLink>
+      <NuxtLink :to="{name: 'about'}" class="py-2 px-4 pr-0 text-xs flex items-center uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white">à propos</NuxtLink>
     </div>
   </nav>
 </template>

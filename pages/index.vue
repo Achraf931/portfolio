@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="mt-24 mb-32">
+    <section class="mt-24 mb-32 w-4/5 mx-auto">
       <p class="text-xl text-center leading-8 md:text-left dark:text-white">Hamrouni Charfeddine</p>
       <p class="opacity-50 text-center md:text-left dark:text-white">Développeur web</p>
 

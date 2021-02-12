@@ -74,6 +74,11 @@ html {
   color: #1a1b1f;
 }
 
+::selection {
+  color: white;
+  background-color: #1a1b1f;
+}
+
 .customWidth {
   width: calc(100% - 30px);
 }

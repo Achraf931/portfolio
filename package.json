@@ -10,12 +10,16 @@
     "heroku-postbuild": "nuxt build"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "5.0.0-1611574754.9020f2a",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/component-cache": "^1.1.6",
+    "@nuxtjs/firebase": "^7.4.1",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.8.3",
+    "firebase": "^8.2.5",
+    "firebase-admin": "^9.4.2",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
