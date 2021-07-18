@@ -1,7 +1,8 @@
 <template>
   <div class="dark:bg-black">
+    <div class="hidden cursor z-10" id="cursor"></div>
     <UIHeader/>
-    <main class="px-4 sm:px-6 pt-20 relative">
+    <main class="px-4 sm:px-6 pt-20 relative z-0">
       <Nuxt/>
       <transition  name="slide-fade" mode="out-in">
         <div ref="notif" v-if="$nuxt.isOffline" role="alert" class="customWidth mx-4 sm:mx-6 mb-6 z-10 text-sm flex items-center justify-between fixed px-4 py-3 leading-normal text-red-100 bg-red-700 font-medium rounded right-0 bottom-0">
@@ -17,11 +18,123 @@
 <script>
 import UIHeader from '~/components/includes/UIHeader'
 import UIFooter from '~/components/includes/UIFooter'
+import Vue from 'vue'
+import global from "~/mixins/global";
+import { gsap } from 'gsap'
+
+Vue.mixin(global)
 
 export default {
+  transition: {
+    name: 'slide',
+    mode: 'out-in',
+    css: false,
+    beforeEnter(el) {
+      gsap.set(el, {
+        scale: 1,
+        opacity: 0,
+        top: '-100%'
+      })
+    },
+    enter(el, done) {
+      gsap.to(el, {
+        opacity: 1,
+        top: 0,
+        duration: 1,
+        ease: 'power2.inOut',
+        onComplete: done
+      })
+    },
+    leave(el, done) {
+      gsap.to(el, {
+        opacity: 0,
+        top: '100%',
+        duration: 1,
+        ease: 'power2.inOut',
+        onComplete: done
+      })
+    }
+  },
   components: {
     UIHeader,
     UIFooter
+  },
+  beforeMount() {
+    console.clear();
+    const element = document.querySelector(".cursor");
+    const target = document.querySelector(".target");
+    const text = document.querySelector(".text-target");
+    class Cursor {
+      constructor(el, target, text) {
+        this.el = el;
+        // this.target = target;
+        // this.text = text;
+        // this.triggerDistance = this.target.getBoundingClientRect().width;
+        this.bind();
+      }
+
+      bind() {
+        document.addEventListener("mousemove", this.move.bind(this), false);
+      }
+
+      move(e) {
+        const cursorPosition = {
+          left: e.clientX,
+          top: e.clientY
+        };
+        document.querySelectorAll(".target").forEach((single) => {
+          const triggerDistance = single.getBoundingClientRect().width;
+
+          const targetPosition = {
+            left:
+              single.getBoundingClientRect().left +
+              single.getBoundingClientRect().width / 2,
+            top:
+              single.getBoundingClientRect().top +
+              single.getBoundingClientRect().height / 2
+          };
+          const distance = {
+            x: targetPosition.left - cursorPosition.left,
+            y: targetPosition.top - cursorPosition.top
+          };
+
+          const angle = Math.atan2(distance.x, distance.y);
+          const hypotenuse = Math.sqrt(
+            distance.x * distance.x + distance.y * distance.y
+          );
+          if (hypotenuse < triggerDistance) {
+            // Nikhil - look at this code to adjust the round cursor area sizing
+            gsap.to(this.el, {
+              duration: 0.2,
+              left: targetPosition.left - (Math.sin(angle) * hypotenuse) / 2,
+              top: targetPosition.top - (Math.cos(angle) * hypotenuse) / 2,
+              height: single.clientHeight + 20,
+              width: single.clientWidth + 20
+            });
+            gsap.to(single.querySelector(".text-target"), {
+              duration: 0.2,
+              x: -((Math.sin(angle) * hypotenuse) / 2),
+              y: -((Math.cos(angle) * hypotenuse) / 2)
+            });
+          } else {
+            gsap.to(this.el, {
+              duration: 0.2,
+              left: cursorPosition.left,
+              top: cursorPosition.top,
+              height: "12px",
+              width: "12px"
+            });
+
+            gsap.to(single.querySelector(".text-target"), {
+              duration: 0.2,
+              x: 0,
+              y: 0
+            });
+          }
+        });
+      }
+    }
+    const cursor = new Cursor(element, target);
   },
   methods: {
     closeNotif() {
@@ -35,6 +148,61 @@ export default {
 </script>
 
 <style>
+.is-visible {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.is-visible-top {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.is-visible-right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.is-visible-left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.target,
+.cursor {
+  border-radius: 50px;
+  width: 0px;
+  height: 0px;
+  border: solid 1px #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.target {
+  border: none;
+  position: relative;
+  width: 70px;
+  height: 60px;
+  left: unset;
+  top: unset;
+  justify-content: center;
+  transform: unset;
+}
+
+nav .target:first-child {
+  border: none;
+  position: unset;
+  top: unset;
+  left: unset;
+  transform: unset;
+  margin: 0;
+}
+
 .page-enter-active, .page-leave-active {
   transition: opacity .2s;
 }
@@ -72,6 +240,7 @@ html {
   margin: 0;
   transition-duration: .2s;
   color: #1a1b1f;
+  scroll-behavior: smooth;
 }
 
 ::selection {
