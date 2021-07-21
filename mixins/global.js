@@ -1,10 +1,8 @@
 export default {
   methods: {
-    visibilityChanged(isVisible) {
-      const items = this.$gsap.utils.toArray('.is-visible');
-
+    visibilityChanged(isVisible, entry) {
       if (isVisible) {
-        this.$gsap.to(items, {
+        this.$gsap.to(entry.target, {
           y: 0,
           autoAlpha: 1,
           duration: 0.2,
@@ -12,11 +10,9 @@ export default {
         })
       }
     },
-    visibilityTop(isVisible) {
-      const items = this.$gsap.utils.toArray('.is-visible-top');
-
+    visibilityTop(isVisible, entry) {
       if (isVisible) {
-        this.$gsap.to(items, {
+        this.$gsap.to(entry.target, {
           y: 0,
           autoAlpha: 1,
           duration: 0.2,
@@ -24,11 +20,9 @@ export default {
         })
       }
     },
-    visibilityLeft(isVisible) {
-      const items = this.$gsap.utils.toArray('.is-visible-left');
-
+    visibilityLeft(isVisible, entry) {
       if (isVisible) {
-        this.$gsap.to(items, {
+        this.$gsap.to(entry.target, {
           x: 0,
           autoAlpha: 1,
           duration: 0.2,
@@ -36,11 +30,9 @@ export default {
         })
       }
     },
-    visibilityRight(isVisible) {
-      const items = this.$gsap.utils.toArray('.is-visible-right');
-
+    visibilityRight(isVisible, entry) {
       if (isVisible) {
-        this.$gsap.to(items, {
+        this.$gsap.to(entry.target, {
           x: 0,
           autoAlpha: 1,
           duration: 0.2,
