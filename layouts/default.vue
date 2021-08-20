@@ -1,8 +1,9 @@
 <template>
-  <div class="dark:bg-black">
+  <div class="dark:bg-black parent">
+    <Loader/>
     <div class="hidden cursor z-10" id="cursor"></div>
     <UIHeader/>
-    <main class="px-4 sm:px-6 pt-20 relative z-0">
+    <main data-scroll-container class="px-4 sm:px-6 pt-20 relative z-0">
       <Nuxt/>
       <transition  name="slide-fade" mode="out-in">
         <div ref="notif" v-if="$nuxt.isOffline" role="alert" class="customWidth mx-4 sm:mx-6 mb-6 z-10 text-sm flex items-center justify-between fixed px-4 py-3 leading-normal text-red-100 bg-red-700 font-medium rounded right-0 bottom-0">
@@ -18,48 +19,49 @@
 <script>
 import UIHeader from '~/components/includes/UIHeader'
 import UIFooter from '~/components/includes/UIFooter'
+import Loader from '~/components/Loader'
 import Vue from 'vue'
 import global from "~/mixins/global";
 import { gsap } from 'gsap'
 
+if (process.client) {
+  const LocomotiveScroll = require('locomotive-scroll')
+}
+
 Vue.mixin(global)
 
 export default {
-  transition: {
-    name: 'slide',
-    mode: 'out-in',
-    css: false,
-    beforeEnter(el) {
-      gsap.set(el, {
-        scale: 1,
-        opacity: 0,
-        top: '-100%'
+  watch: {
+    '$route'() {
+      console.log('test')
+
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 0.3 } })
+
+      tl.set('.loader', {
+        y: '100%'
       })
-    },
-    enter(el, done) {
-      gsap.to(el, {
-        opacity: 1,
-        top: 0,
-        duration: 1,
-        ease: 'power2.inOut',
-        onComplete: done
-      })
-    },
-    leave(el, done) {
-      gsap.to(el, {
-        opacity: 0,
-        top: '100%',
-        duration: 1,
-        ease: 'power2.inOut',
-        onComplete: done
-      })
+      tl.fromTo('.loader', {
+          y: '100%'
+        },
+        {
+          y: '0%'
+        })
+      .fromTo('.loader', {
+        y: '0%'
+      },
+        {
+          y: '-100%'
+        })
     }
   },
   components: {
     UIHeader,
-    UIFooter
+    UIFooter,
+    Loader
   },
   beforeMount() {
+    this.$gsap.set('.parent', { y: -window.pageYOffset })
+
     console.clear();
     const element = document.querySelector(".cursor");
     const target = document.querySelector(".target");
@@ -257,4 +259,71 @@ html {
     width: unset;
   }
 }
+
+/*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden; }
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.has-scroll-smooth body {
+  overflow: hidden; }
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh; }
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap; }
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%; }
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0; }
+.c-scrollbar:hover {
+  transform: scaleX(1.45); }
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+  opacity: 1; }
+[data-scroll-direction="horizontal"] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1); }
+[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+  transform: scaleY(1.3); }
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab; }
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing; }
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0; }
 </style>
