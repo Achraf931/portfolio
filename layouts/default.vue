@@ -1,6 +1,6 @@
 <template>
   <div class="dark:bg-black parent">
-    <Loader/>
+<!--    <Loader/>-->
     <div class="hidden cursor z-10" id="cursor"></div>
     <UIHeader/>
     <main data-scroll-container class="px-4 sm:px-6 pt-20 relative z-0">
@@ -31,10 +31,8 @@ if (process.client) {
 Vue.mixin(global)
 
 export default {
-  watch: {
+  /*watch: {
     '$route'() {
-      console.log('test')
-
       const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 0.3 } })
 
       tl.set('.loader', {
@@ -53,7 +51,7 @@ export default {
           y: '-100%'
         })
     }
-  },
+  },*/
   components: {
     UIHeader,
     UIFooter,

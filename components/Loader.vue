@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed loader" style="background-color: #581DEE; z-index: 99999">
+  <div class="hidden fixed loader" style="background-color: #581DEE; z-index: 99999">
 
   </div>
 </template>
