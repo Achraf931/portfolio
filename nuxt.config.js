@@ -34,7 +34,6 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-aspect-ratio.js', mode: 'client' },
-    { src: '~/plugins/vue-observe-visibility.js', mode: 'client' },
     { src: '~/plugins/vuelidate.js', mode: 'client' }
   ],
 
@@ -89,7 +88,8 @@ export default {
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
     "@nuxtjs/component-cache",
-    '@nuxtjs/localtunnel'
+    '@nuxtjs/localtunnel',
+    '~/modules/viewport-observer'
   ],
 
   polyfill: {

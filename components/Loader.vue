@@ -1,5 +1,5 @@
 <template>
-  <div class="hidden fixed loader" style="background-color: #581DEE; z-index: 99999">
+  <div class="fixed loader" style="background-color: #581DEE; z-index: 99999">
 
   </div>
 </template>
@@ -8,7 +8,8 @@
   .loader {
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
     height: 100vh;
     transform: translate(0px, 100%);
   }

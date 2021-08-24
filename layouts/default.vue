@@ -1,64 +1,33 @@
 <template>
   <div class="dark:bg-black parent">
-<!--    <Loader/>-->
+    <Loader/>
     <div class="hidden cursor z-10" id="cursor"></div>
-    <UIHeader/>
+    <IncludesUIHeader/>
     <main data-scroll-container class="px-4 sm:px-6 pt-20 relative z-0">
       <Nuxt/>
-      <transition  name="slide-fade" mode="out-in">
-        <div ref="notif" v-if="$nuxt.isOffline" role="alert" class="customWidth mx-4 sm:mx-6 mb-6 z-10 text-sm flex items-center justify-between fixed px-4 py-3 leading-normal text-red-100 bg-red-700 font-medium rounded right-0 bottom-0">
-          Vous n'êtes plus connecté à internet.
-          <svg @click="closeNotif" class="ml-3 w-4 h-4" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="white" d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zM11.4 10l2.83-2.83-1.41-1.41L10 8.59 7.17 5.76 5.76 7.17 8.59 10l-2.83 2.83 1.41 1.41L10 11.41l2.83 2.83 1.41-1.41L11.41 10z"/></svg>
-        </div>
-      </transition>
+      <div ref="notif" v-if="$nuxt.isOffline" role="alert" class="customWidth mx-4 sm:mx-6 mb-6 z-10 text-sm flex items-center justify-between fixed px-4 py-3 leading-normal text-red-100 bg-red-700 font-medium rounded right-0 bottom-0">
+        Vous n'êtes plus connecté à internet.
+        <svg @click="closeNotif" class="ml-3 w-4 h-4" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="white" d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zM11.4 10l2.83-2.83-1.41-1.41L10 8.59 7.17 5.76 5.76 7.17 8.59 10l-2.83 2.83 1.41 1.41L10 11.41l2.83 2.83 1.41-1.41L11.41 10z"/></svg>
+      </div>
     </main>
-    <UIFooter/>
+    <IncludesUIFooter/>
   </div>
 </template>
 
 <script>
-import UIHeader from '~/components/includes/UIHeader'
-import UIFooter from '~/components/includes/UIFooter'
-import Loader from '~/components/Loader'
 import Vue from 'vue'
 import global from "~/mixins/global";
 import { gsap } from 'gsap'
 
-if (process.client) {
+/*if (process.client) {
   const LocomotiveScroll = require('locomotive-scroll')
-}
+}*/
 
 Vue.mixin(global)
 
 export default {
-  /*watch: {
-    '$route'() {
-      const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 0.3 } })
-
-      tl.set('.loader', {
-        y: '100%'
-      })
-      tl.fromTo('.loader', {
-          y: '100%'
-        },
-        {
-          y: '0%'
-        })
-      .fromTo('.loader', {
-        y: '0%'
-      },
-        {
-          y: '-100%'
-        })
-    }
-  },*/
-  components: {
-    UIHeader,
-    UIFooter,
-    Loader
-  },
   beforeMount() {
-    this.$gsap.set('.parent', { y: -window.pageYOffset })
+    //  this.$gsap.set('.parent', { y: -window.pageYOffset })
 
     console.clear();
     const element = document.querySelector(".cursor");
@@ -148,6 +117,17 @@ export default {
 </script>
 
 <style>
+::-webkit-scrollbar {
+  display: none!important;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .01s;
+  transition-delay: 1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .is-visible {
   opacity: 0;
   transform: translateY(30px);
@@ -238,9 +218,7 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
-  transition-duration: .2s;
   color: #1a1b1f;
-  scroll-behavior: smooth;
 }
 
 ::selection {

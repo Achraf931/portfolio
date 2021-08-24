@@ -5,13 +5,13 @@
     </NuxtLink>
     <div class="inline-flex items-stretch flex-no-shrink justify-end ml-0 md:ml-auto">
       <div class="relative target text-xs flex items-center box-border">
-        <NuxtLink @click.native="scrollToTop(0, 0)" :to="{name: 'index'}" class="uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white text-target relative select-none">Accueil</NuxtLink>
+        <NuxtLink :to="{name: 'index'}" class="uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white text-target relative select-none">Accueil</NuxtLink>
       </div>
       <div class="relative target text-xs flex items-center mx-10 md:mx-20 box-border">
-        <NuxtLink @click.native="scrollToTop(0, 0)" :to="{name: 'projects'}" :class="{'font-bold': projectPage}" class="uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white text-target relative select-none">Projets</NuxtLink>
+        <NuxtLink :to="{name: 'projects'}" :class="{'font-bold': projectPage}" class="uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white text-target relative select-none">Projets</NuxtLink>
       </div>
       <div class="relative target text-xs flex items-center box-border">
-        <NuxtLink @click.native="scrollToTop(0, 0)" :to="{name: 'about'}" class="uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white text-target relative select-none">à&nbsp;propos</NuxtLink>
+        <NuxtLink :to="{name: 'about'}" class="uppercase text-grayCustom hover:bg-grey-dark hover:opacity-75 dark:text-white text-target relative select-none">à&nbsp;propos</NuxtLink>
       </div>
     </div>
   </nav>
@@ -22,11 +22,6 @@
     data() {
       return {
         projectPage: false
-      }
-    },
-    methods: {
-      scrollToTop() {
-        window.scrollTo(0, 0)
       }
     },
     watch: {

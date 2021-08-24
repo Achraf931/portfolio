@@ -1,38 +1,39 @@
 <template>
   <div class="min-h-screen">
     <section class="mt-24 mb-32 w-4/5 mx-auto">
-      <h2 v-observe-visibility="{ callback: this.visibilityTop, once: true }" class="is-visible-top text-4xl md:text-5xl lg:text-6xl text-center md:text-left dark:text-white">{{ project.title }}</h2>
-      <p v-observe-visibility="{ callback: this.visibilityTop, once: true }" class="is-visible-top opacity-50 text-center md:text-left dark:text-white">{{ project.client }}</p>
+      <h2 v-observe="{ onEnter: visibility, threshold: 1, once: true }" class="is-visible-top text-4xl md:text-5xl lg:text-6xl text-center md:text-left dark:text-white">{{ project.title }}</h2>
+      <p v-observe="{ onEnter: visibility, threshold: 1, once: true }" class="is-visible-top opacity-50 text-center md:text-left dark:text-white">{{ project.client }}</p>
 
       <div class="flex flex-col text-center mt-20 md:text-left md:flex-row md:justify-between">
         <div class="w-full md:w-2/3">
-          <p v-observe-visibility="{ callback: this.visibilityChanged, once: true }" class="is-visible opacity-50 text-center md:text-left dark:text-white">
+          <p v-observe="{ onEnter: visibility, threshold: 1, once: true }" class="is-visible opacity-50 text-center md:text-left dark:text-white">
             {{ project.description }}
           </p>
         </div>
         <div class="w-full flex items-center md:items-end justify-end md:w-1/3 ml-0 md:ml-4">
-          <a v-observe-visibility="{ callback: this.visibilityChanged, once: true }" :href="project.url" target="_blank" rel="noreferrer noopener" class="is-visible mt-20 mx-auto xs:ml-auto text-center uppercase py-3 px-6 text-xs text-white bg-black outline-none hover:opacity-75 focus:outline-none dark:bg-gray-100 dark:text-black">Voir le site</a>
+          <a v-observe="{ onEnter: visibility, threshold: 1, once: true }" :href="project.url" target="_blank" rel="noreferrer noopener" class="is-visible mt-20 mx-auto xs:ml-auto text-center uppercase py-3 px-6 text-xs text-white bg-black outline-none hover:opacity-75 focus:outline-none dark:bg-gray-100 dark:text-black">Voir le site</a>
         </div>
       </div>
     </section>
 
     <client-only>
       <vue-aspect-ratio ar="16:9">
-        <img v-observe-visibility="{ callback: this.visibilityChanged, once: true }" class="is-visible w-full h-full object-cover" :src="project.image" :alt="project.title + ' Image'">
+        <img v-observe="{ onEnter: visibility, threshold: 1, once: true }" class="is-visible w-full h-full object-cover" :src="project.image" :alt="project.title + ' Image'">
       </vue-aspect-ratio>
     </client-only>
 
     <section class="w-full mt-24 mb-10 flex flex-col justify-between xs:flex-row">
-      <NuxtLink v-observe-visibility="{ callback: this.visibilityChanged, once: true }" :to="{name: 'projects-slug', params: {slug: project.prev}}" class="is-visible uppercase text-center w-full py-3 px-6 text-xs text-white bg-black outline-none xs:w-auto hover:opacity-75 focus:outline-none dark:bg-gray-100 dark:text-black">Projet précédent</NuxtLink>
-      <NuxtLink v-observe-visibility="{ callback: this.visibilityChanged, once: true }" :to="{name: 'projects-slug', params: {slug: project.next}}" class="is-visible mt-3 xs:mt-0 text-center uppercase w-full py-3 px-6 text-xs text-white bg-black outline-none xs:w-auto hover:opacity-75 focus:outline-none dark:bg-gray-100 dark:text-black">Projet suivant</NuxtLink>
+      <NuxtLink v-observe="{ onEnter: visibility, threshold: 1, once: true }" :to="{name: 'projects-slug', params: {slug: project.prev}}" class="is-visible uppercase text-center w-full py-3 px-6 text-xs text-white bg-black outline-none xs:w-auto hover:opacity-75 focus:outline-none dark:bg-gray-100 dark:text-black">Projet précédent</NuxtLink>
+      <NuxtLink v-observe="{ onEnter: visibility, threshold: 1, once: true }" :to="{name: 'projects-slug', params: {slug: project.next}}" class="is-visible mt-3 xs:mt-0 text-center uppercase w-full py-3 px-6 text-xs text-white bg-black outline-none xs:w-auto hover:opacity-75 focus:outline-none dark:bg-gray-100 dark:text-black">Projet suivant</NuxtLink>
     </section>
   </div>
 </template>
 
 <script>
-import Form from "@/components/Form";
+import transition from "@/mixins/transition";
 
 export default {
+  mixins: [transition],
   /*async asyncData({ app, params }) {
     let project
     await app.$axios.get('/projects/' + params.slug)
@@ -93,9 +94,6 @@ export default {
   },
   beforeMount() {
     this.getData()
-  },
-  components: {
-    Form
   },
   methods: {
     getData() {

@@ -26,7 +26,6 @@
     "smoothscroll-polyfill": "^0.4.4",
     "url-polyfill": "^1.1.12",
     "vue-aspect-ratio": "^0.1.1",
-    "vue-observe-visibility": "^1.0.0",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
