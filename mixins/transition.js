@@ -27,7 +27,7 @@ export default {
           this.$gsap
             .timeline({ onComplete: done })
             .fromTo('.loader', {
-                y: '100%'
+                y: '120%'
               },
               {
                 y: '0%',

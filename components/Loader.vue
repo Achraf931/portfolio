@@ -11,6 +11,6 @@
     width: 100%;
     max-width: 100vw;
     height: 100vh;
-    transform: translate(0px, 100%);
+    transform: translate(0px, 120%);
   }
 </style>
