@@ -37,6 +37,16 @@ export default {
     { src: '~/plugins/vuelidate.js', mode: 'client' }
   ],
 
+  render: {
+    // HTTP2: https://nuxtjs.org/api/configuration-render/#http2
+    http2: {
+      push: true,
+      pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
+        .filter(f => f.asType === 'script' && f.file === 'runtime.js')
+        .map(f => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`)
+    }
+  },
+
   gsap: {
     extraPlugins: {
       /**
