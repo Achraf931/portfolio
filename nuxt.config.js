@@ -135,13 +135,18 @@ export default {
   },
 
   sitemap: {
-    hostname: "https://hamrouni.herokuapp.com",
-    gzip: true
+    hostname: "https://hamrouni.herokuapp.com", // L'adresse de votre site, que vous pouvez placer comme ici dans une variable d'environnement.
+    path: '/sitemap.xml', // L'emplacement de votre fichier sitemap.
+    cacheTime: 1000 * 60 * 15, // La durée avant que le sitemap soit regénéré. Ici 15mn.
+    gzip: true,
+    generate: false, // Génère une version statique du sitemap quand activé. À utiliser avec nuxt generate.
+    exclude: [] // Les pages qu'on a pas trop envie de voir atterrir sur Google.
   },
 
   robots: {
     UserAgent: "*",
-    Disallow: "/"
+    Disallow: "/",
+    Sitemap: "https://hamrouni.herokuapp.com/sitemap.xml"
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
