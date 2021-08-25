@@ -1,7 +1,7 @@
 <template>
   <nav class="z-50 fixed top-0 p-4 sm:p-6 select-none flex flex-col md:flex-row md:items-stretch items-center w-full">
     <NuxtLink class="target flex items-center" :to="{name: 'index'}">
-      <img class="text-target rounded-full w-10 h-10" :src="this.$colorMode.value === 'dark' ? '/logoW.webp' : '/icon.png'" alt="Logo">
+      <img height="40" width="40" class="text-target rounded-full w-10 h-10" :src="this.$colorMode.value === 'dark' ? '/logoW.webp' : '/icon.png'" alt="Logo">
     </NuxtLink>
     <div class="inline-flex items-stretch flex-no-shrink justify-end ml-0 md:ml-auto">
       <div class="relative target text-xs flex items-center box-border">

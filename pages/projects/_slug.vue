@@ -18,7 +18,7 @@
 
     <client-only>
       <vue-aspect-ratio ar="16:9">
-        <img v-observe="{ onEnter: visibility, threshold: 1, once: true }" class="is-visible w-full h-full object-cover" :src="project.image" :alt="project.title + ' Image'">
+        <img height="920" width="1840" v-observe="{ onEnter: visibility, threshold: 1, once: true }" class="is-visible w-full h-full object-cover" :src="project.image" :alt="project.title + ' Image'">
       </vue-aspect-ratio>
     </client-only>
 

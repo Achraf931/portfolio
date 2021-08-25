@@ -5,7 +5,7 @@
       <client-only>
         <vue-aspect-ratio v-observe="{ onEnter: visibility, threshold: 1, once: true }" ar="16:9" class="is-visible w-full bg-black dark:bg-dark relative project">
           <NuxtLink :to="{name: 'projects-slug', params: {slug: 'passy-plaza'}}">
-            <img class="object-cover w-full h-full" src="https://www.passyplaza.fr/passy-plaza.webp" alt="Passy Plaza">
+            <img height="460" width="920" class="object-cover w-full h-full" src="https://www.passyplaza.fr/passy-plaza.webp" alt="Passy Plaza">
             <div class="absolute top-0 left-0 w-full h-full bg-black title-container transition-all duration-150 ease-in-out flex items-center justify-center" style="background: rgba(0, 0, 0, 0.7)">
               <h2 class="text-white font-black text-center leading-none" style="font-size: 3rem">Nouveau site Passy Plaza</h2>
             </div>
@@ -13,7 +13,7 @@
         </vue-aspect-ratio>
         <vue-aspect-ratio v-observe="{ onEnter: visibility, threshold: 1, once: true }" ar="16:9" class="is-visible w-full bg-black dark:bg-dark relative project">
           <NuxtLink :to="{name: 'projects-slug', params: {slug: 'sneakizy'}}">
-            <img class="object-cover w-full h-full" src="https://res.cloudinary.com/hyp1x6w5j/image/upload/v1593189235/logo2_kagvfm.jpg" alt="Sneakizy">
+            <img height="460" width="920" class="object-cover w-full h-full" src="https://res.cloudinary.com/hyp1x6w5j/image/upload/v1593189235/logo2_kagvfm.jpg" alt="Sneakizy">
             <div class="absolute top-0 left-0 w-full h-full bg-black title-container transition-all duration-150 ease-in-out flex items-center justify-center" style="background: rgba(0, 0, 0, 0.7)">
               <h2 class="text-white font-black text-center leading-none" style="font-size: 3rem">E-commerce de sneakers</h2>
             </div>
@@ -21,7 +21,7 @@
         </vue-aspect-ratio>
         <vue-aspect-ratio v-observe="{ onEnter: visibility, threshold: 1, once: true }" ar="16:9" class="is-visible w-full bg-black dark:bg-dark relative project">
           <NuxtLink :to="{name: 'projects-slug', params: {slug: 'tasks-manager'}}">
-            <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" alt="Tasks Manager">
+            <img height="460" width="920" class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" alt="Tasks Manager">
             <div class="absolute top-0 left-0 w-full h-full bg-black title-container transition-all duration-150 ease-in-out flex items-center justify-center" style="background: rgba(0, 0, 0, 0.7)">
               <h2 class="text-white font-black text-center leading-none" style="font-size: 3rem">Gestionnaire de tâches</h2>
             </div>
@@ -29,7 +29,7 @@
         </vue-aspect-ratio>
         <vue-aspect-ratio v-observe="{ onEnter: visibility, threshold: 1, once: true }" ar="16:9" class="is-visible w-full bg-black dark:bg-dark relative project">
           <NuxtLink :to="{name: 'projects-slug', params: {slug: 'weather-app'}}">
-            <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1597132825820-094d481f1c4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Weather App">
+            <img height="460" width="920" class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1597132825820-094d481f1c4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Weather App">
             <div class="absolute top-0 left-0 w-full h-full bg-black title-container transition-all duration-150 ease-in-out flex items-center justify-center" style="background: rgba(0, 0, 0, 0.7)">
               <h2 class="text-white font-black text-center leading-none" style="font-size: 3rem">Weather App</h2>
             </div>
